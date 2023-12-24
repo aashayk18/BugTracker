@@ -1,0 +1,17 @@
+1. Please define a base package. Eg. com.simsoft.bugtracker. This is in the form of <TLD>.<ORGNAME>.<PROJECT>
+2. This will give you a folder structure like e.g. com.simsoft.bugtracker.
+3. Have internal folders module wise.
+4. Within every module, have functionality wise folders. E.g.
+	a. Beans
+	b. Action-classes
+	c. Constants
+	d. UX
+	e. Tags
+	f. Servlets
+	g. And so on.
+5. Servlet should be preferably one per business object. Like – BugServlet, DashBoardServlet, WorkflowServlet etc.
+6. There should be no action class functionality in servlet. Servlet should only co-ordinate info flow.
+7. Have a util module for all your utility classes.
+8. Every loop should have a try catch block within the loop.
+9. Always check for null quantities.
+10. Do not include SQL statements in the java code. Use procedures.
