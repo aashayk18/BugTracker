@@ -3,7 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/Aashay/Desktop/Internship/Project/BugTracker/src/java/com/simsoft/bugtracker/util/UtilityClass1.java</file>
+            <file>file:/D:/Aashay/Desktop/Internship/Project/BugTracker/src/java/com/simsoft/bugtracker/workflow/Tags/WorkflowTags.java</file>
+            <file>file:/D:/Aashay/Desktop/Internship/Project/BugTracker/src/java/com/simsoft/bugtracker/workflow/ActionClasses/WorkflowAction.java</file>
             <file>file:/D:/Aashay/Desktop/Internship/Project/BugTracker/web/index.html</file>
+            <file>file:/D:/Aashay/Desktop/Internship/Project/BugTracker/src/java/com/simsoft/bugtracker/workflow/Servlets/WorkflowServlet.java</file>
+            <file>file:/D:/Aashay/Desktop/Internship/Project/BugTracker/src/java/com/simsoft/bugtracker/bug/UX/BugUI.java</file>
+            <file>file:/D:/Aashay/Desktop/Internship/Project/BugTracker/src/java/com/simsoft/bugtracker/bug/ActionClasses/BugAction.java</file>
+            <file>file:/D:/Aashay/Desktop/Internship/Project/BugTracker/src/java/com/simsoft/bugtracker/bug/Constants/BugConstants.java</file>
+            <file>file:/D:/Aashay/Desktop/Internship/Project/BugTracker/src/java/com/simsoft/bugtracker/dashboard/Constants/DashboardConstants.java</file>
+            <file>file:/D:/Aashay/Desktop/Internship/Project/BugTracker/src/java/com/simsoft/bugtracker/bug/Tags/BugTags.java</file>
+            <file>file:/D:/Aashay/Desktop/Internship/Project/BugTracker/src/java/com/simsoft/bugtracker/dashboard/Tags/DashboardTags.java</file>
+            <file>file:/D:/Aashay/Desktop/Internship/Project/BugTracker/src/java/com/simsoft/bugtracker/database/DBConnection.java</file>
+            <file>file:/D:/Aashay/Desktop/Internship/Project/BugTracker/src/java/com/simsoft/bugtracker/database/DBUtil.java</file>
+            <file>file:/D:/Aashay/Desktop/Internship/Project/BugTracker/src/java/com/simsoft/bugtracker/dashboard/ActionClasses/DashboardAction.java</file>
+            <file>file:/D:/Aashay/Desktop/Internship/Project/BugTracker/src/java/com/simsoft/bugtracker/workflow/Constants/WorkflowConstants.java</file>
+            <file>file:/D:/Aashay/Desktop/Internship/Project/BugTracker/src/java/com/simsoft/bugtracker/bug/Beans/BugBean.java</file>
+            <file>file:/D:/Aashay/Desktop/Internship/Project/BugTracker/src/java/com/simsoft/bugtracker/workflow/UX/WorkflowUI.java</file>
+            <file>file:/D:/Aashay/Desktop/Internship/Project/BugTracker/src/java/com/simsoft/bugtracker/dashboard/UX/DashboardUI.java</file>
         </group>
     </open-files>
 </project-private>

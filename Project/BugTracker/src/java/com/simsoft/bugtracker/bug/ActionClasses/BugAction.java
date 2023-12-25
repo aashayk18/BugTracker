@@ -5,7 +5,7 @@ import com.simsoft.bugtracker.database.DBConnection;
 import com.simsoft.bugtracker.database.DBUtil;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -16,13 +16,12 @@ public class BugAction {
     public List<BugBean> getAllBugs() {
         List<BugBean> bugs = new ArrayList<>();
         Connection connection = null;
-        PreparedStatement statement = null;
+        CallableStatement statement = null;
         ResultSet resultSet = null;
 
         try {
             connection = DBConnection.getConnection();
-            String query = "SELECT * FROM bugs";
-            statement = connection.prepareStatement(query);
+            statement = connection.prepareCall("{call GetAllBugsProcedure()}");
             resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
@@ -45,15 +44,14 @@ public class BugAction {
         return bugs;
     }
 
-    // Method to create a new bug
+    // Method to create a new bug using stored procedure
     public boolean createBug(BugBean bug) {
         Connection connection = null;
-        PreparedStatement statement = null;
+        CallableStatement statement = null;
 
         try {
             connection = DBConnection.getConnection();
-            String query = "INSERT INTO bugs (title, description, status) VALUES (?, ?, ?)";
-            statement = connection.prepareStatement(query);
+            statement = connection.prepareCall("{call CreateBugProcedure(?, ?, ?)}");
             statement.setString(1, bug.getTitle());
             statement.setString(2, bug.getDescription());
             statement.setString(3, bug.getStatus());
@@ -70,19 +68,18 @@ public class BugAction {
         }
     }
 
-    // Method to update a bug
+    // Method to update a bug using stored procedure
     public boolean updateBug(BugBean bug) {
         Connection connection = null;
-        PreparedStatement statement = null;
+        CallableStatement statement = null;
 
         try {
             connection = DBConnection.getConnection();
-            String query = "UPDATE bugs SET title = ?, description = ?, status = ? WHERE bug_id = ?";
-            statement = connection.prepareStatement(query);
-            statement.setString(1, bug.getTitle());
-            statement.setString(2, bug.getDescription());
-            statement.setString(3, bug.getStatus());
-            statement.setInt(4, bug.getBugId());
+            statement = connection.prepareCall("{call UpdateBugProcedure(?, ?, ?, ?)}");
+            statement.setInt(1, bug.getBugId());
+            statement.setString(2, bug.getTitle());
+            statement.setString(3, bug.getDescription());
+            statement.setString(4, bug.getStatus());
 
             int rowsUpdated = statement.executeUpdate();
             return rowsUpdated > 0;
@@ -96,15 +93,14 @@ public class BugAction {
         }
     }
 
-    // Method to delete a bug
+    // Method to delete a bug using stored procedure
     public boolean deleteBug(int bugId) {
         Connection connection = null;
-        PreparedStatement statement = null;
+        CallableStatement statement = null;
 
         try {
             connection = DBConnection.getConnection();
-            String query = "DELETE FROM bugs WHERE bug_id = ?";
-            statement = connection.prepareStatement(query);
+            statement = connection.prepareCall("{call DeleteBugProcedure(?)}");
             statement.setInt(1, bugId);
 
             int rowsDeleted = statement.executeUpdate();

@@ -5,23 +5,22 @@ import com.simsoft.bugtracker.database.DBConnection;
 import com.simsoft.bugtracker.database.DBUtil;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DashboardAction {
-    // Method to retrieve summarized dashboard data
+    // Method to retrieve summarized dashboard data using stored procedures
     public DashboardBean getDashboardSummary() {
         DashboardBean dashboardData = new DashboardBean(); // Create a bean to hold dashboard data
         Connection connection = null;
-        PreparedStatement statement = null;
+        CallableStatement statement = null;
         ResultSet resultSet = null;
 
         try {
             connection = DBConnection.getConnection();
-            // Query to retrieve aggregated data (example: total bugs, resolved bugs, etc.)
-            String query = "SELECT COUNT(*) AS totalBugs, SUM(CASE WHEN status = 'Resolved' THEN 1 ELSE 0 END) AS resolvedBugs FROM bugs";
-            statement = connection.prepareStatement(query);
+            // Call the DashboardSummaryProcedure to retrieve summarized data
+            statement = connection.prepareCall("{call DashboardSummaryProcedure()}");
             resultSet = statement.executeQuery();
 
             if (resultSet.next()) {

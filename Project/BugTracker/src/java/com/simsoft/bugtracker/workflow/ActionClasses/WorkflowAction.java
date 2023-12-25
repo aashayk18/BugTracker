@@ -5,24 +5,24 @@ import com.simsoft.bugtracker.database.DBConnection;
 import com.simsoft.bugtracker.database.DBUtil;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class WorkflowAction {
-    // Method to retrieve all workflows
-    public List<WorkflowBean> getAllWorkflows() {
+    // Method to retrieve all workflows using stored procedures
+    public List<WorkflowBean> getAllWorkflowsUsingProcedure() {
         List<WorkflowBean> workflows = new ArrayList<>();
         Connection connection = null;
-        PreparedStatement statement = null;
+        CallableStatement statement = null;
         ResultSet resultSet = null;
 
         try {
             connection = DBConnection.getConnection();
-            String query = "SELECT * FROM workflows";
-            statement = connection.prepareStatement(query);
+            // Call the stored procedure to retrieve all workflows
+            statement = connection.prepareCall("{call GetAllWorkflowsProcedure()}");
             resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
