@@ -3,46 +3,29 @@ package com.simsoft.bugtracker.dashboard.Beans;
 import java.io.Serializable;
 
 public class DashboardBean implements Serializable {
-    private int dashboardId;
-    private String name;
-    private String description;
-    // Add more attributes as needed
+    private int totalBugs;
+    private int resolvedBugs;
 
     // Constructors
     public DashboardBean() {
         // Default constructor
     }
 
-    public DashboardBean(int dashboardId, String name, String description) {
-        this.dashboardId = dashboardId;
-        this.name = name;
-        this.description = description;
-    }
-
     // Getters and Setters
-    public int getDashboardId() {
-        return dashboardId;
+    public int getTotalBugs() {
+        return totalBugs;
     }
 
-    public void setDashboardId(int dashboardId) {
-        this.dashboardId = dashboardId;
+    public void setTotalBugs(int totalBugs) {
+        this.totalBugs = totalBugs;
     }
 
-    public String getName() {
-        return name;
+    public int getResolvedBugs() {
+        return resolvedBugs;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setResolvedBugs(int resolvedBugs) {
+        this.resolvedBugs = resolvedBugs;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    // Other methods as per requirement
 }

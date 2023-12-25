@@ -5,18 +5,19 @@ import java.io.Serializable;
 public class WorkflowBean implements Serializable {
     private int workflowId;
     private String name;
-    private String status;
-    // Add more attributes as needed
+    private String status; // Assuming status is part of the WorkflowBean
 
     // Constructors
     public WorkflowBean() {
         // Default constructor
     }
 
+    // Parameterized constructor
     public WorkflowBean(int workflowId, String name, String status) {
         this.workflowId = workflowId;
         this.name = name;
         this.status = status;
+        // Initialize more attributes as needed
     }
 
     // Getters and Setters
@@ -43,6 +44,4 @@ public class WorkflowBean implements Serializable {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    // Other methods as per requirement
 }

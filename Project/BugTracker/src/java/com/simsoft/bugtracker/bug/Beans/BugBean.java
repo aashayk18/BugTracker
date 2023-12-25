@@ -7,6 +7,7 @@ public class BugBean implements Serializable {
     private String title;
     private String description;
     private String status;
+    private String priority;
     // Add more attributes as needed
 
     // Constructors
@@ -52,6 +53,14 @@ public class BugBean implements Serializable {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+    
+    public String getPriority() {
+        return priority;
+    }
+
+    public void setPriority(String priority) {
+        this.priority = priority;
     }
 
     // Other methods as per requirement

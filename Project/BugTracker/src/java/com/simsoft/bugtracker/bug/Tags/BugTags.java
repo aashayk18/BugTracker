@@ -1,14 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.simsoft.bugtracker.bug.Tags;
 
-/**
- *
- * @author Aashay
- */
+import java.util.HashSet;
+import java.util.Set;
+
 public class BugTags {
-    
+    private Set<String> bugTags;
+
+    public BugTags() {
+        this.bugTags = new HashSet<>();
+    }
+
+    public void addTag(String tag) {
+        bugTags.add(tag);
+    }
+
+    public void removeTag(String tag) {
+        bugTags.remove(tag);
+    }
+
+    public boolean hasTag(String tag) {
+        return bugTags.contains(tag);
+    }
+
+    public Set<String> getAllTags() {
+        return bugTags;
+    }
 }

@@ -1,14 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.simsoft.bugtracker.dashboard.Tags;
 
-/**
- *
- * @author Aashay
- */
+import java.util.ArrayList;
+import java.util.List;
+
 public class DashboardTags {
-    
+    private List<String> dashboardTags;
+
+    public DashboardTags() {
+        this.dashboardTags = new ArrayList<>();
+    }
+
+    public void addTag(String tag) {
+        dashboardTags.add(tag);
+    }
+
+    public void removeTag(String tag) {
+        dashboardTags.remove(tag);
+    }
+
+    public boolean hasTag(String tag) {
+        return dashboardTags.contains(tag);
+    }
+
+    public List<String> getAllTags() {
+        return dashboardTags;
+    }
 }
